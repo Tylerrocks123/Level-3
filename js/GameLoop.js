@@ -6,7 +6,7 @@ var interval = 1000/60;
 var p1Wins = 0;
 var p2Wins = 0;
 var ballImage = new Image();
-ballImage.src = "images/confetti.jpg";
+ballImage.src = "./images/confetti.jpg";
 
 canvas = document.getElementById("canvas");
 context = canvas.getContext("2d");
