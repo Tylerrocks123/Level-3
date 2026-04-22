@@ -5,6 +5,8 @@ var timer;
 var interval = 1000/60;
 var p1Wins = 0;
 var p2Wins = 0;
+var ballImage = new Image();
+ballImage.src = "images/confetti.jpg";
 
 canvas = document.getElementById("canvas");
 context = canvas.getContext("2d");
@@ -214,5 +216,18 @@ ball.move();
     //npc3.drawRect();
     player1.drawRect();
     player2.drawRect();
-    ball.drawCircle();
+ context.beginPath();
+
+context.save();
+context.arc(ball.x, ball.y, ball.width / 2, 0, Math.PI * 2);
+context.closePath();
+context.clip();
+context.drawImage(
+    ballImage,
+    ball.x - ball.width / 2,
+    ball.y - ball.height / 2,
+    ball.width,
+    ball.height
+);
+context.restore();
 }
