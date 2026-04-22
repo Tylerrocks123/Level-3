@@ -3,6 +3,8 @@ var context;
 var player;
 var timer;
 var interval = 1000/60;
+var p1Wins = 0;
+var p2Wins = 0;
 
 canvas = document.getElementById("canvas");
 context = canvas.getContext("2d");
@@ -86,6 +88,9 @@ else
 }
 */
 context.clearRect(0,0,canvas.width,canvas.height);
+context.font = "20px Arial";
+context.fillText("Player 1 Wins: " + p1Wins, 100, 100);
+context.fillText("Player 2 Wins: " + p2Wins, 800, 100);
 
 ball.move();
     if (ball.x > canvas.width - ball.width/2)
@@ -94,6 +99,7 @@ ball.move();
         ball.y = canvas.height / 2;
         ball.vx = 4;
         ball.vy = 0;
+        p1Wins++;
     }
     if (ball.x < 0 - ball.width/2)
     {
@@ -101,6 +107,7 @@ ball.move();
         ball.y = canvas.height / 2;
         ball.vx = 4;
         ball.vy = 0;
+        p2Wins++;
     }
     if (ball.y > canvas.height - ball.height/2)
     {
