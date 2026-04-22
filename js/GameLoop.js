@@ -24,7 +24,10 @@ player2.vy = 0;
 ball.vx = 5;
 ball.vy = 0;
 
-timer = setInterval(animate, interval);
+ballImage.onload = function () 
+{
+    timer = setInterval(animate, interval);
+};
 
 function animate()
 {
