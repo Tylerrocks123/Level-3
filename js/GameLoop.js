@@ -92,6 +92,13 @@ context.font = "20px Arial";
 context.fillText("Player 1 Wins: " + p1Wins, 100, 100);
 context.fillText("Player 2 Wins: " + p2Wins, 800, 100);
 
+context.strokeStyle = "yellow";
+context.lineWidth = 5;
+context.beginPath();
+context.moveTo(canvas.width / 2, 0);
+context.lineTo(canvas.width / 2, canvas.height);
+context.stroke();
+
 ball.move();
     if (ball.x > canvas.width - ball.width/2)
     {
